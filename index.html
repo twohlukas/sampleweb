@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Sample |Test| Page</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">Place<span>|</span>One</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Images</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle" id="greetings"></p>
+          <h1 class="title">
+            We <span>Place<br />a</span> Jacket Sale's Shop
+          </h1>
+          <p class="description">
+            Welcome to Place One!, a skilled and
+            creative shop with a passion for creating beautiful,
+            elegant and quality jackets.
+          </p>
+          <div class="input-box">
+      <i class="uil uil-search"></i>
+      <input type="text" id="searchInput" placeholder=" Search here..." />
+      <button class="button" onclick="search()" >Search</button>
+    </div>
+          <div class="action__btns">
+        <button class="portfolio" onclick="updateSearch('Bomber Jacket')">Bomber</button>
+        <button class="portfolio" onclick="updateSearch('Leather Jacket')">Leather</button>
+        <button class="portfolio" onclick="updateSearch('Denim Jacket')">Denim</button>
+        <button class="portfolio" onclick="updateSearch('Pufffer Jacket')">Puffer </button>
+        <button class="portfolio" onclick="updateSearch('Quilted Jacket')">Quilted </button>
+          </div>
+        </div>
+        <div class="image">
+          <img src="img/jacket1.png" alt="profile" />
+        </div>
+      </div>
+    </section>
+  </body>
+  <script type="text/javascript">
+
+    /* display greeting based on time of day*/
+    var myDate = new Date();
+var hrs = myDate.getHours();
+
+var greet;
+
+if (hrs < 12)
+  greet = 'Good Morning';
+else if (hrs >= 12 && hrs <= 17)
+  greet = 'Good Afternoon';
+else if (hrs >= 17 && hrs <= 24)
+  greet = 'Good Evening';
+
+document.getElementById('greetings').innerHTML ='<b>' + greet + '</b>';
+
+/*update to search bar*/
+function updateSearch(keyword) {
+    // Get the search input element
+    var searchInput = document.getElementById('searchInput');
+
+    // Update the search input value with the clicked button's name
+    searchInput.value = keyword;
+}
+/* function to search input on browser*/
+
+function search() {
+            var searchQuery = document.getElementById('searchInput').value;
+            if (searchQuery.trim() !== '') {
+                // Open a new tab/window with the search query in the URL
+                window.open('https://www.google.com/search?q=' + encodeURIComponent(searchQuery), '_blank');
+            }
+        }
+
+  </script>
+
+  </html>
